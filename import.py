@@ -3,7 +3,7 @@ import json
 import unicodedata
 
 # ====> REMARQUE : Les Url ci-dessous sont différentes que celles affichées dans la vidéo.
-# C'est normal, continuez bien avec les url de ce fichier
+# C'est normal, continuez bien avec les url de ce fichier.
 open_quizz_db_data = (
     ("Animaux", "Les chats", "https://www.codeavecjonathan.com/res/mission/openquizzdb_50.json"),
     ("Arts", "Musée du Louvre", "https://www.codeavecjonathan.com/res/mission/openquizzdb_86.json"),
@@ -33,7 +33,7 @@ def generate_json_file(categorie, titre, url):
             data = json.loads(response.text)
         
             all_quizz = data["quizz"]["fr"]
-            for quizz_title, quizz_data in all_quizz.items():
+            for quizz_title,quizz_data in all_quizz.items():
                 out_filename = get_quizz_filename(categorie, titre, quizz_title)
                 print(out_filename)
                 out_questionnaire_data["difficulte"] = quizz_title
